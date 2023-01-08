@@ -10,4 +10,4 @@ module.exports = {
   transformIgnorePatterns: [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$',
   ],
-}
+};
