@@ -1,11 +1,11 @@
-import { 
-  isAllChineseStr, 
-  isChineseChar, 
-  isVoid, 
-  sortChineseStrByAscii, 
-  sortChineseStrByPinYin, 
-  splitStringByNumber 
-} from "./common-utils";
+import {
+  isAllChineseStr,
+  isChineseChar,
+  isVoid,
+  sortChineseStrByAscii,
+  sortChineseStrByPinYin,
+  splitStringByNumber,
+} from './common-utils';
 
 const DEFAULT_OPTIONS = {
   sortByAscii: true,
@@ -28,11 +28,13 @@ const compareTwoString = (stringA, stringB, options = {}) => {
   if (isVoid(stringB)) return 1;
 
   if (typeof stringA !== 'string' || typeof stringB !== 'string') {
-    throw new Error("Please enter two string type data for comparison");
+    throw new Error('Please enter two string type data for comparison');
   }
-  
+
   if (options && typeof options !== 'object') {
-    throw new Error("The parameter options does not conform to the specification");
+    throw new Error(
+      'The parameter options does not conform to the specification'
+    );
   }
 
   // stringA and stringB are number string
@@ -52,7 +54,6 @@ const compareTwoString = (stringA, stringB, options = {}) => {
 
   const arrStringA = splitStringByNumber(stringA, opts);
   const arrStringB = splitStringByNumber(stringB, opts);
-
 
   let result = 0;
   const length = Math.min(arrStringA.length, arrStringB.length);
@@ -85,10 +86,14 @@ const compareTwoString = (stringA, stringB, options = {}) => {
         } else if (Number(charA) < Number(charB)) {
           result = -1;
         }
-      } 
+      }
 
       // all the char are not number
-      if (isNaN(charA) && typeof charA === 'string' && typeof charB === 'string') {
+      if (
+        isNaN(charA) &&
+        typeof charA === 'string' &&
+        typeof charB === 'string'
+      ) {
         if (charA > charB) {
           result = 1;
         } else if (charA < charB) {
@@ -112,12 +117,10 @@ const compareTwoString = (stringA, stringB, options = {}) => {
   if (result !== 0) return result;
 
   // result = 0
-  // The same after comparison, the string length is larger 
+  // The same after comparison, the string length is larger
   if (stringA.length > stringB.length) return 1;
   if (stringA.length < stringB.length) return -1;
   return 0;
 };
 
-export {
-  compareTwoString
-};
+export { compareTwoString };

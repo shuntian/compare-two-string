@@ -1,4 +1,4 @@
-import { chinese2FirstLetter } from "./chinese-utils";
+import { chinese2FirstLetter } from './chinese-utils';
 
 // const REG_NUMBER_DIGIT = /\d/;
 const REG_STRING_NUMBER_PARTS = /\d+|\D+/g;
@@ -53,7 +53,7 @@ export const sortChineseStrByAscii = (stringA, stringB) => {
       return result;
     }
   }
-  // The same after comparison, the string length is larger 
+  // The same after comparison, the string length is larger
   if (stringA.length > stringB.length) return 1;
   if (stringA.length < stringB.length) return -1;
   return 0;
@@ -71,7 +71,7 @@ export const sortChineseStrByPinYin = (stringA, stringB) => {
       return -1;
     }
   }
-  // The same after comparison, the string length is larger 
+  // The same after comparison, the string length is larger
   if (stringA.length > stringB.length) return 1;
   if (stringA.length < stringB.length) return -1;
   return 0;

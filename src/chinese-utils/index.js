@@ -1,4 +1,4 @@
-import { oMultiDiff, strChineseFirstPY } from "./constants";
+import { oMultiDiff, strChineseFirstPY } from './constants';
 
 const getFirstLatter = (char) => {
   const uni = char.charCodeAt(0);
@@ -7,12 +7,14 @@ const getFirstLatter = (char) => {
   // Check if it is polyphonic
   // Yes: Treat as polyphonic characters
   // No: directly find the corresponding initial letter in the strChineseFirstPY string
-  return oMultiDiff[uni] ? oMultiDiff[uni] : (strChineseFirstPY.charAt(uni - 19968));
+  return oMultiDiff[uni]
+    ? oMultiDiff[uni]
+    : strChineseFirstPY.charAt(uni - 19968);
 };
 
 const getStrLetters = (str) => {
   const charArr = str.split('');
-  return charArr.map(item => getFirstLatter(item));
+  return charArr.map((item) => getFirstLatter(item));
 };
 
 const formatResult = (letterArr) => {
@@ -23,7 +25,7 @@ const formatResult = (letterArr) => {
     const str = letterArr[i];
     const strlen = str.length;
     if (strlen === 1) {
-      arrResult = arrResult.map(item => item += str);
+      arrResult = arrResult.map((item) => (item += str));
       continue;
     }
 
@@ -33,7 +35,7 @@ const formatResult = (letterArr) => {
     for (let k = 0; k < strlen; k++) {
       let tmp = oldResult.slice(0);
       // Append the current character to the end of each element
-      tmp = tmp.map(item => item += str.charAt(k));
+      tmp = tmp.map((item) => (item += str.charAt(k)));
       // Connect the copied and modified array to arrResult
       arrResult = arrResult.concat(tmp);
     }
@@ -42,8 +44,8 @@ const formatResult = (letterArr) => {
 };
 
 const chinese2FirstLetter = (str) => {
-  if (typeof (str) != 'string') {
-    throw new Error("Please pass in a parameter of string type!");
+  if (typeof str != 'string') {
+    throw new Error('Please pass in a parameter of string type!');
   }
 
   const letterArr = getStrLetters(str);
@@ -51,6 +53,4 @@ const chinese2FirstLetter = (str) => {
   return result;
 };
 
-export {
-  chinese2FirstLetter
-};
+export { chinese2FirstLetter };

@@ -6,7 +6,7 @@ const formatResult = (letterArr) => {
     const str = letterArr[i];
     const strlen = str.length;
     if (strlen === 1) {
-      arrResult = arrResult.map(item => item += str);
+      arrResult = arrResult.map((item) => (item += str));
       continue;
     }
 
@@ -16,13 +16,13 @@ const formatResult = (letterArr) => {
     for (let k = 0; k < strlen; k++) {
       let tmp = oldResult.slice(0);
       // Append the current character to the end of each element
-      tmp = tmp.map(item => item += str.charAt(k));
+      tmp = tmp.map((item) => (item += str.charAt(k)));
       // Connect the copied and modified array to arrResult
       arrResult = arrResult.concat(tmp);
     }
   }
   return arrResult;
-}
+};
 
 const arr = ['cz', 'l', 'r', 'cs'];
 const ret = formatResult(arr);
