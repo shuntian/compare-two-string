@@ -8,8 +8,8 @@ import {
 } from './common-utils';
 
 const DEFAULT_OPTIONS = {
-  sortByAscii: true,
-  sortByNumericalSize: true,
+  sortByPinyin: false,
+  sortByNumericalSize: false,
 };
 
 /**
@@ -45,7 +45,7 @@ const compareTwoString = (stringA, stringB, options = {}) => {
   }
 
   if (isAllChineseStr(stringA) && isAllChineseStr(stringB)) {
-    if (opts.sortByAscii) {
+    if (!opts.sortByPinyin) {
       return sortChineseStrByAscii(stringA, stringB);
     } else {
       return sortChineseStrByPinYin(stringA, stringB);
@@ -104,7 +104,7 @@ const compareTwoString = (stringA, stringB, options = {}) => {
 
     // all the char are chinese
     if (isChineseChar(charA) && isChineseChar(charB)) {
-      if (opts.sortByAscii) {
+      if (!opts.sortByPinyin) {
         result = sortChineseStrByAscii(charA, charB);
       } else {
         result = sortChineseStrByPinYin(charA, charB);
