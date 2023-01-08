@@ -1,4 +1,4 @@
-import { chinese2FirstLatter } from "./chinese-utils";
+import { chinese2FirstLetter } from "./chinese-utils";
 
 // const REG_NUMBER_DIGIT = /\d/;
 const REG_STRING_NUMBER_PARTS = /\d+|\D+/g;
@@ -62,8 +62,8 @@ export const sortChineseStrByAscii = (stringA, stringB) => {
 export const sortChineseStrByPinYin = (stringA, stringB) => {
   const length = Math.min(stringA.length, stringB.length);
   for (let i = 0; i < length; i++) {
-    const pinyin_a = chinese2FirstLatter(stringA[i])[0];
-    const pinyin_b = chinese2FirstLatter(stringB[i])[0];
+    const pinyin_a = chinese2FirstLetter(stringA[i])[0];
+    const pinyin_b = chinese2FirstLetter(stringB[i])[0];
     if (pinyin_a > pinyin_b) {
       return 1;
     }

@@ -41,7 +41,7 @@ const formatResult = (letterArr) => {
   return arrResult;
 };
 
-const chinese2FirstLatter = (str) => {
+const chinese2FirstLetter = (str) => {
   if (typeof (str) != 'string') {
     throw new Error("Please pass in a parameter of string type!");
   }
@@ -52,5 +52,5 @@ const chinese2FirstLatter = (str) => {
 };
 
 export {
-  chinese2FirstLatter
+  chinese2FirstLetter
 };
