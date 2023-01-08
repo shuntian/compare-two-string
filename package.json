@@ -2,9 +2,9 @@
   "name": "compare-two-string",
   "version": "1.0.0",
   "description": "compare two string",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watchAll",
     "build": "webpack --config ./config/webpack.dev.config.js",
     "serve": "./node_modules/http-server/bin/http-server ./site",
     "prepare": "husky install"
