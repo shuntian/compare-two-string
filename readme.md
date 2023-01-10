@@ -11,7 +11,7 @@
 3. 中文字符串
 4. 数字中文英文混排
 
-排序要求
+排序条件
 
 1. [数字] 按照数值大小排序
 2. [字母] 按照字母顺序排序
@@ -28,8 +28,34 @@
 
 ## 安装
 
+```
+npm install compare-two-string
+```
+
 ## 使用
 
-## 开发
+```
+import compareTwoString from 'compareTwoString';
 
-## 关键字
+const arr = ['add12', 'add2', 'add1', 'cae', 'nihao'];
+const options = {
+  sortByPinyin: false,
+  sortByNumericalSize: false,
+};
+// up sort
+arr.sort((a, b) => compareTwoString(a, b, options)); // ['add1', 'add12', 'add2', 'cae', 'nihao']
+
+// down sort
+arr.sort((a, b) => -1 * compareTwoString(a, b, options)); // ['nihao', 'cae', 'add2', 'add12', 'add1']
+```
+
+## 参数说明
+
+| 参数名              | 默认值 | 释意                                                                                                                      |
+| ------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------- |
+| sortByPinyin        | false  | 默认按照中文字符串的 ASCII 值进行排序, 如果设置为 true, 则按照中文字符串 首字母列表顺序进行排序                           |
+| sortByNumericalSize | false  | 包含有数字的字符串(除去纯数字的字符串), 默认按照单个数字大小进行排序, 如果设置为 true, 则按照连续数字字符串的大小进行排序 |
+
+## KEYWORDS
+
+中文首字母, 中文首字母排序, 字符串数字按数字大小排序
