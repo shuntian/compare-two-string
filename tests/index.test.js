@@ -1,4 +1,4 @@
-import { compareTwoString } from '../src/index';
+import compareTwoString from '../src/index';
 
 const numberStringTestCase = ['123', '223', '1233', '432'];
 

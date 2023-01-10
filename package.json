@@ -9,6 +9,11 @@
     "serve": "./node_modules/http-server/bin/http-server ./site",
     "prepare": "husky install"
   },
+  "files": [
+    "dist",
+    "package.json",
+    "package-lock.json"
+  ],
   "author": "shuntian",
   "license": "ISC",
   "devDependencies": {

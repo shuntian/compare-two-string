@@ -123,4 +123,4 @@ const compareTwoString = (stringA, stringB, options = {}) => {
   return 0;
 };
 
-export { compareTwoString };
+export default compareTwoString;
