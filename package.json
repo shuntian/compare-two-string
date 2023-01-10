@@ -1,6 +1,6 @@
 {
   "name": "compare-two-string",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "compare two string",
   "main": "dist/index.js",
   "scripts": {
